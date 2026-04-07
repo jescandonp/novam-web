@@ -2,8 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const schema = z.object({
   name: z.string().min(2),
   company: z.string().min(2),
@@ -32,6 +30,7 @@ function checkRateLimit(ip: string): boolean {
 }
 
 export async function POST(req: NextRequest) {
+  const resend = new Resend(process.env.RESEND_API_KEY);
   /* Rate limit */
   const ip = req.headers.get("x-forwarded-for") ?? "unknown";
   if (!checkRateLimit(ip)) {
