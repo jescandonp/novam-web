@@ -89,17 +89,17 @@ export function IndustrySolutions() {
             ))}
           </ul>
 
-          {/* Clientes */}
-          {current.clients.length > 0 && (
+          {/* Tecnologías aplicables */}
+          {current.technologies.length > 0 && (
             <div className="mb-8">
-              <p className="label-tech text-text-muted mb-3">Clientes en este sector</p>
+              <p className="label-tech text-text-muted mb-3">Tecnologías aplicadas</p>
               <div className="flex flex-wrap gap-2">
-                {current.clients.map((client) => (
+                {current.technologies.map((t) => (
                   <span
-                    key={client}
-                    className="px-3 py-1 bg-steel/50 text-text-muted text-xs font-medium rounded-full font-sans"
+                    key={t}
+                    className="px-3 py-1.5 bg-nova-blue/8 border border-nova-blue/20 text-nova-blue text-xs font-medium rounded-full font-sans uppercase tracking-wide"
                   >
-                    {client}
+                    {t === "flexim" ? "Flexim Clamp-On" : t === "smar" ? "Smar Instrumentación" : "UWT Nivel"}
                   </span>
                 ))}
               </div>

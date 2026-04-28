@@ -58,9 +58,11 @@ const APPLICATIONS = [
 ];
 
 const OFFICE_INFO = [
-  { city: "Bogotá", role: "Sede principal" },
-  { city: "Barranquilla", role: "Oficina Costa Atlántica" },
-  { city: "Bucaramanga", role: "Oficina Nororiente" },
+  { city: "Barranquilla", role: "Gerencia General" },
+  { city: "Bogotá", role: "Zona Centro · Llanos" },
+  { city: "Bucaramanga", role: "Zona Santander" },
+  { city: "Barranquilla", role: "Zona Norte" },
+  { city: "Cali", role: "Zona Pacífico · Sur" },
 ];
 
 export default function ContactoPage() {

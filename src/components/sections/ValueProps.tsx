@@ -43,8 +43,8 @@ const VALUE_PROPS = [
     ),
     title: "Soporte técnico local",
     description:
-      "Ingenieros con experiencia en campo radicados en Bogotá, Barranquilla y Bucaramanga. Visita técnica, comisionamiento, calibración y postventa — todo desde Colombia.",
-    highlight: "3 ciudades de cobertura",
+      "Ingenieros con experiencia en campo radicados en Barranquilla, Bogotá, Bucaramanga y Cali. Visita técnica, comisionamiento, calibración y postventa — todo desde Colombia.",
+    highlight: "5 ciudades con presencia directa",
   },
 ];
 
