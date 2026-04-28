@@ -57,9 +57,51 @@ const VALUES = [
 ];
 
 const OFFICES = [
-  { city: "Bogotá", role: "Sede principal", region: "Cundinamarca" },
-  { city: "Barranquilla", role: "Costa Atlántica", region: "Atlántico" },
-  { city: "Bucaramanga", role: "Nororiente", region: "Santander" },
+  {
+    city: "Barranquilla",
+    role: "Gerencia General",
+    region: "Atlántico",
+    name: "Antonio Sancivier",
+    phone: "+57 321 535 4908",
+    phoneHref: "tel:+573215354908",
+    email: "asancivier@novam.com.co",
+  },
+  {
+    city: "Bogotá",
+    role: "Zona Centro · Llanos",
+    region: "Cundinamarca",
+    name: "Cristian Medina",
+    phone: "+57 311 870 7943",
+    phoneHref: "tel:+573118707943",
+    email: "cmedina@novam.com.co",
+  },
+  {
+    city: "Bucaramanga",
+    role: "Zona Santander",
+    region: "Santander",
+    name: "Brandon Delgado",
+    phone: "+57 316 749 8585",
+    phoneHref: "tel:+573167498585",
+    email: "bdelgado@novam.com.co",
+  },
+  {
+    city: "Barranquilla",
+    role: "Zona Norte",
+    region: "Atlántico",
+    name: "Nikol Carrillo",
+    phone: "+57 300 616 6214",
+    phoneHref: "tel:+573006166214",
+    email: "ncarrillo@novam.com.co",
+  },
+  {
+    city: "Cali",
+    role: "Zona Pacífico · Sur",
+    region: "Valle del Cauca",
+    name: "Carolina González",
+    phone: "+57 310 879 0678",
+    phoneHref: "tel:+573108790678",
+    email: "cgonzalez@novam.com.co",
+  },
 ];
 
 const ALLIANCES = [
@@ -202,23 +244,24 @@ export default function NosotrosPage() {
           title="Presencia en toda Colombia"
           subtitle="Ingenieros radicados en las principales ciudades industriales del país para respuesta rápida y soporte técnico en campo."
         />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {OFFICES.map((o) => (
-            <address key={o.city} className="not-italic card-base p-6">
+            <address key={`${o.city}-${o.name}`} className="not-italic card-base p-6">
               <div className="flex items-center gap-2 mb-3">
                 <MapPin className="w-5 h-5 text-nova-cyan" aria-hidden="true" />
                 <span className="font-display font-bold text-xl text-text-primary">{o.city}</span>
               </div>
               <p className="text-nova-blue text-sm font-medium font-sans mb-1">{o.role}</p>
               <p className="text-text-muted text-sm font-sans">{o.region}, Colombia</p>
-              <div className="mt-4 pt-4 border-t border-steel space-y-2">
-                <a href={contactInfo.phoneHref} className="flex items-center gap-2 text-sm text-text-muted hover:text-nova-blue transition-colors font-sans">
+              <p className="text-text-primary text-sm font-medium font-sans mt-3">{o.name}</p>
+              <div className="mt-3 pt-3 border-t border-steel space-y-2">
+                <a href={o.phoneHref} className="flex items-center gap-2 text-sm text-text-muted hover:text-nova-blue transition-colors font-sans">
                   <Phone className="w-4 h-4" aria-hidden="true" />
-                  {contactInfo.phone}
+                  {o.phone}
                 </a>
-                <a href={`mailto:${contactInfo.email}`} className="flex items-center gap-2 text-sm text-text-muted hover:text-nova-blue transition-colors font-sans">
+                <a href={`mailto:${o.email}`} className="flex items-center gap-2 text-sm text-text-muted hover:text-nova-blue transition-colors font-sans">
                   <Mail className="w-4 h-4" aria-hidden="true" />
-                  {contactInfo.email}
+                  {o.email}
                 </a>
               </div>
             </address>
