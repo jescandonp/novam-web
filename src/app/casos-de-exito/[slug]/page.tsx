@@ -249,18 +249,3 @@ export default async function CaseStudyPage({
             </div>
           </aside>
         </div>
-      </SectionWrapper>
-
-      {/* Casos relacionados */}
-      {related.length > 0 && (
-        <RelatedCases
-          cases={related}
-          title="Más casos en este sector"
-          bg="light"
-        />
-      )}
-
-      <CTABanner />
-    </>
-  );
-}

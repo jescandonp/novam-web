@@ -80,14 +80,4 @@ export const industries: Industry[] = [
       "Gases industriales especiales (nitrógeno, CO₂, argón)",
       "Sulfato de manganeso y sales",
       "Líneas de suministro de reactivos",
-      "Control de dosificación",
-    ],
-    image: "/images/industries/quimica.jpg",
-    technologies: ["flexim", "smar", "uwt"],
-    clients: ["Empresa de Gases Industriales · Nacional", "Empresa Química · Bogotá"],
-  },
-];
-
-export function getIndustryBySlug(slug: string): Industry | undefined {
-  return industries.find((i) => i.slug === slug);
-}
+      "Control de 

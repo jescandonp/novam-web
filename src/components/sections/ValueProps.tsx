@@ -58,15 +58,15 @@ export function ValueProps() {
         centered
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-steel">
         {VALUE_PROPS.map((prop, i) => (
           <article
             key={i}
-            className="card-base p-8 flex flex-col gap-5"
+            className="bg-white p-10 flex flex-col gap-6 hover:bg-steel/20 transition-colors group"
           >
-            {/* Ícono */}
+            {/* Ícono — cuadrado con borde, fill en hover */}
             <div
-              className="w-14 h-14 rounded-xl bg-nova-cyan-light flex items-center justify-center text-nova-blue shrink-0"
+              className="w-12 h-12 border border-nova-blue text-nova-blue flex items-center justify-center shrink-0 group-hover:bg-nova-blue group-hover:text-white transition-colors duration-200"
               aria-hidden="true"
             >
               {prop.icon}
@@ -82,11 +82,4 @@ export function ValueProps() {
 
             {/* Highlight */}
             <div className="mt-auto pt-4 border-t border-steel">
-              <span className="label-tech text-nova-blue">✓ {prop.highlight}</span>
-            </div>
-          </article>
-        ))}
-      </div>
-    </SectionWrapper>
-  );
-}
+  

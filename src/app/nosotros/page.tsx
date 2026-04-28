@@ -268,33 +268,4 @@ export default function NosotrosPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {OFFICES.map((o) => (
             <address key={`${o.city}-${o.name}`} className="not-italic card-base p-6">
-              <div className="flex items-center gap-2 mb-3">
-                <MapPin className="w-5 h-5 text-nova-cyan" aria-hidden="true" />
-                <span className="font-display font-bold text-xl text-text-primary">{o.city}</span>
-              </div>
-              <p className="text-nova-blue text-sm font-medium font-sans mb-1">{o.role}</p>
-              <p className="text-text-muted text-sm font-sans">{o.region}, Colombia</p>
-              <p className="text-text-primary text-sm font-medium font-sans mt-3">{o.name}</p>
-              <div className="mt-3 pt-3 border-t border-steel space-y-2">
-                <a href={o.phoneHref} className="flex items-center gap-2 text-sm text-text-muted hover:text-nova-blue transition-colors font-sans">
-                  <Phone className="w-4 h-4" aria-hidden="true" />
-                  {o.phone}
-                </a>
-                <a href={`mailto:${o.email}`} className="flex items-center gap-2 text-sm text-text-muted hover:text-nova-blue transition-colors font-sans">
-                  <Mail className="w-4 h-4" aria-hidden="true" />
-                  {o.email}
-                </a>
-              </div>
-            </address>
-          ))}
-        </div>
-      </SectionWrapper>
-
-      <CTABanner
-        title="¿Quiere conocer más sobre Nova Measurement?"
-        subtitle="Hablemos de cómo podemos convertirnos en el socio técnico de referencia para su planta."
-        primaryLabel="Contáctenos"
-      />
-    </>
-  );
-}
+ 

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, MapPin } from "lucide-react";
 import { SectionWrapper, SectionHeader } from "@/components/ui/SectionWrapper";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -22,7 +22,7 @@ const BRAND_LABELS: Record<string, string> = {
 };
 
 export function CasesPreview() {
-  const preview = caseStudies.slice(0, 6);
+  const [featured, ...rest] = caseStudies.slice(0, 4);
 
   return (
     <SectionWrapper bg="light">
@@ -32,79 +32,75 @@ export function CasesPreview() {
         subtitle="Proyectos ejecutados con tecnología de clase mundial y soporte técnico local. Cada instalación, una historia de precisión sin paradas."
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {preview.map((cs) => (
-          <article
+      {/* Bento grid — 1 card grande + 3 pequeñas */}
+      <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 md:h-[580px]">
+
+        {/* Card principal — ocupa 2 cols × 2 filas */}
+        <Link
+          href={`/casos-de-exito/${featured.slug}`}
+          className="relative md:col-span-2 md:row-span-2 rounded-xl overflow-hidden bg-nova-navy group block"
+          aria-label={`Ver caso: ${featured.title}`}
+        >
+          <Image
+            src={featured.image}
+            alt={`${featured.client}: ${featured.application}`}
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+          {/* Gradient fuerte desde abajo */}
+          <div className="absolute inset-0 bg-gradient-to-t from-nova-navy/90 via-nova-navy/30 to-transparent" aria-hidden="true" />
+
+          {/* Contenido overlay */}
+          <div className="absolute inset-0 flex flex-col justify-end p-8">
+            {/* Badges */}
+            <div className="flex gap-2 mb-4">
+              <Badge variant="sector">{SECTOR_LABELS[featured.sector]}</Badge>
+              <Badge variant="brand">{BRAND_LABELS[featured.technology]}</Badge>
+            </div>
+
+            {/* Ubicación */}
+            <div className="flex items-center gap-1.5 mb-2">
+              <MapPin className="w-3.5 h-3.5 text-nova-cyan" aria-hidden="true" />
+              <span className="label-tech text-nova-cyan">{featured.location.split(",")[0]}</span>
+            </div>
+
+            {/* Título */}
+            <h3 className="font-display font-black text-xl text-white leading-tight mb-3 line-clamp-3">
+              {featured.title}
+            </h3>
+
+            {/* Highlight clave */}
+            <p className="text-white/70 text-sm font-sans leading-relaxed line-clamp-2 mb-5">
+              {featured.highlights[0]}
+            </p>
+
+            {/* CTA inline */}
+            <span className="flex items-center gap-1.5 text-sm font-medium text-nova-cyan font-sans group-hover:gap-2.5 transition-all duration-200">
+              Ver caso completo
+              <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+            </span>
+          </div>
+        </Link>
+
+        {/* 3 cards pequeñas */}
+        {rest.map((cs) => (
+          <Link
             key={cs.slug}
-            className="card-base overflow-hidden flex flex-col group"
+            href={`/casos-de-exito/${cs.slug}`}
+            className="relative md:col-span-1 md:row-span-1 rounded-xl overflow-hidden bg-nova-navy group block"
+            aria-label={`Ver caso: ${cs.title}`}
           >
-            {/* Imagen */}
-            <div className="relative aspect-[16/10] bg-nova-navy overflow-hidden">
-              <Image
-                src={cs.image}
-                alt={`${cs.client}: ${cs.application}`}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-nova-navy/60 to-transparent" aria-hidden="true" />
+            <Image
+              src={cs.image}
+              alt={`${cs.client}: ${cs.application}`}
+              fill
+              sizes="(max-width: 768px) 100vw, 25vw"
+              className="object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            {/* Gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-nova-navy/85 via-nova-navy/20 to-transparent" aria-hidden="true" />
 
-              {/* Badges sobre imagen */}
-              <div className="absolute bottom-3 left-3 flex gap-2">
-                <Badge variant="sector">{SECTOR_LABELS[cs.sector]}</Badge>
-                <Badge variant="brand">{BRAND_LABELS[cs.technology]}</Badge>
-              </div>
-            </div>
-
-            {/* Contenido */}
-            <div className="p-6 flex flex-col flex-1">
-              {/* Cliente + año */}
-              <div className="flex items-center justify-between mb-2">
-                <span className="label-tech text-nova-blue">{cs.client}</span>
-                <span className="label-tech text-text-muted">{cs.year}</span>
-              </div>
-
-              <h3 className="heading-md text-text-primary mb-3 line-clamp-2">
-                {cs.title}
-              </h3>
-
-              {/* Ficha rápida */}
-              <dl className="grid grid-cols-2 gap-x-4 gap-y-1.5 mb-4 text-xs font-sans">
-                <dt className="text-text-muted">Fluido</dt>
-                <dd className="text-text-primary font-medium">{cs.fluid}</dd>
-                {cs.diameter && (
-                  <>
-                    <dt className="text-text-muted">Diámetro</dt>
-                    <dd className="text-text-primary font-medium font-mono">{cs.diameter}</dd>
-                  </>
-                )}
-                <dt className="text-text-muted">Ubicación</dt>
-                <dd className="text-text-primary font-medium">{cs.location.split(",")[0]}</dd>
-              </dl>
-
-              <p className="text-text-muted text-sm leading-relaxed font-sans line-clamp-3 mb-5 flex-1">
-                {cs.summary}
-              </p>
-
-              <Link
-                href={`/casos-de-exito/${cs.slug}`}
-                className="mt-auto flex items-center gap-1.5 text-sm font-medium text-nova-blue hover:text-nova-blue-dark transition-colors font-sans group/link"
-                aria-label={`Ver caso completo: ${cs.title}`}
-              >
-                Ver caso completo
-                <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" aria-hidden="true" />
-              </Link>
-            </div>
-          </article>
-        ))}
-      </div>
-
-      {/* CTA ver todos */}
-      <div className="mt-12 text-center">
-        <Button href="/casos-de-exito" variant="secondary" size="lg">
-          Ver todos los casos de éxito
-        </Button>
-      </div>
-    </SectionWrapper>
-  );
-}
+            {/* Sector badge top-left */}
+            <div className="absolute top-3 left-3">
+              <Badge variant="sector">{SECTOR_LABELS[cs.sector]}</Ba

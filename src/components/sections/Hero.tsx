@@ -139,37 +139,4 @@ export function Hero() {
           >
             {HERO_STATS.map((stat) => (
               <div
-                key={stat.label}
-                className="bg-white/8 backdrop-blur-sm border border-white/15 rounded-xl p-4"
-              >
-                <p className="font-display font-black text-3xl text-nova-cyan leading-none mb-1">
-                  {stat.value}
-                </p>
-                <p className="text-white/60 text-xs font-sans leading-tight">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
-          </motion.div>
-        </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <motion.a
-        href="#valor"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: mounted ? 1 : 0 }}
-        transition={{ delay: 1.2, duration: 0.6 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-white/40 hover:text-white/70 transition-colors"
-        aria-label="Desplazarse hacia abajo"
-      >
-        <motion.div
-          animate={{ y: [0, 6, 0] }}
-          transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
-        >
-          <ChevronDown className="w-6 h-6" aria-hidden="true" />
-        </motion.div>
-      </motion.a>
-    </section>
-  );
-}
+      

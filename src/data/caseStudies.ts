@@ -123,18 +123,4 @@ export const caseStudies: CaseStudy[] = [
       "Instalación de refractómetro de proceso Flexim PIOX R para medición continua en línea de grados Brix en extracto de café. La tecnología no intrusiva eliminó los puntos de muestreo manual y garantizó la trazabilidad del proceso productivo.",
     highlights: [
       "Medición continua en línea — eliminación del muestreo manual",
-      "Precisión de ±0.1 °Brix en proceso dinámico",
-      "Sin contacto con el producto — cumplimiento de normas sanitarias HACCP",
-      "Integración directa con sistema de control existente (4-20 mA)",
-    ],
-  },
-];
-
-export function getCaseStudyBySlug(slug: string): CaseStudy | undefined {
-  return caseStudies.find((c) => c.slug === slug);
-}
-
-export function getCaseStudiesBySector(sector: string): CaseStudy[] {
-  if (sector === "all") return caseStudies;
-  return caseStudies.filter((c) => c.sector === sector);
-}
+      "Precisión de ±
