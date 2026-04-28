@@ -3,7 +3,11 @@ import { PageHero } from "@/components/ui/PageHero";
 import { SectionWrapper, SectionHeader } from "@/components/ui/SectionWrapper";
 import { CTABanner } from "@/components/sections/CTABanner";
 import { Badge } from "@/components/ui/Badge";
-import { MapPin, Phone, Mail } from "lucide-react";
+import {
+  MapPin, Phone, Mail,
+  Award, ShieldCheck, Leaf, HeartHandshake,
+  Gauge, Scale, Zap, Star, Wrench, Users2, ClipboardCheck,
+} from "lucide-react";
 import { contactInfo } from "@/data/navigation";
 
 export const metadata: Metadata = {
@@ -15,44 +19,52 @@ export const metadata: Metadata = {
 /* Valores corporativos — fuente: Gestión Estratégica 2025-2030 */
 const VALUES = [
   {
+    icon: Gauge,
     title: "Fidelidad Técnica",
     description:
-      "Garantizamos precisión, estabilidad y trazabilidad en cada medición. Nuestras soluciones cumplen estándares internacionales y son validadas en campo para asegurar resultados confiables y decisiones operativas seguras.",
+      "Precisión, estabilidad y trazabilidad en cada medición. Soluciones validadas en campo y alineadas a estándares internacionales.",
   },
   {
+    icon: Scale,
     title: "Integridad Consultiva",
     description:
-      "Actuamos con transparencia y responsabilidad técnica. Cada recomendación nace de comprender el proceso del cliente y proponer soluciones alineadas con sus objetivos, riesgos y normativas aplicables.",
+      "Transparencia y responsabilidad técnica. Recomendamos lo que el proceso necesita, no lo que es más fácil de vender.",
   },
   {
+    icon: Zap,
     title: "Innovación Aplicada",
     description:
-      "Adoptamos tecnologías de última generación que elevan la eficiencia, reducen riesgos y generan ventajas competitivas sostenibles para nuestros clientes y aliados.",
+      "Adoptamos tecnologías de última generación que elevan la eficiencia y generan ventajas competitivas sostenibles.",
   },
   {
+    icon: Star,
     title: "Excelencia en la Experiencia",
     description:
-      "Convertimos cada interacción en una oportunidad de crear valor. Escuchamos, anticipamos necesidades y acompañamos con una atención multicanal coherente durante todo el ciclo de vida del servicio.",
+      "Convertimos cada interacción en valor. Atención multicanal coherente durante todo el ciclo de vida del servicio.",
   },
   {
+    icon: Wrench,
     title: "Soporte Confiable",
     description:
-      "Nuestra relación no termina con la venta. Ofrecemos acompañamiento técnico especializado, mantenimiento, seguimiento y postventa enfocada en disponibilidad operativa y tranquilidad.",
+      "La relación no termina con la venta. Postventa técnica especializada enfocada en disponibilidad operativa.",
   },
   {
+    icon: Users2,
     title: "Colaboración Estratégica",
     description:
-      "Construimos soluciones junto a nuestros clientes y aliados. Integramos conocimiento técnico, visión compartida y trabajo conjunto para alcanzar resultados superiores durante todo el ciclo de vida del servicio.",
+      "Construimos soluciones junto a nuestros clientes. Conocimiento técnico compartido para resultados superiores.",
   },
   {
-    title: "Rigor y Control en la Ejecución",
+    icon: ClipboardCheck,
+    title: "Rigor en la Ejecución",
     description:
-      "Aplicamos disciplina operativa en cada proyecto. Desde la selección del equipo hasta la instalación y el soporte, garantizamos cumplimiento normativo, trazabilidad, seguridad y excelencia técnica.",
+      "Disciplina operativa en cada proyecto. Cumplimiento normativo, trazabilidad y seguridad en cada instalación.",
   },
   {
-    title: "Compromiso con la Sostenibilidad",
+    icon: Leaf,
+    title: "Compromiso Sostenible",
     description:
-      "Actuamos de forma responsable con el entorno, promoviendo prácticas seguras, eficientes y ambientalmente responsables en todas nuestras operaciones.",
+      "Prácticas responsables con el entorno. Operaciones eficientes y ambientalmente conscientes en todo lo que hacemos.",
   },
 ];
 
@@ -135,33 +147,37 @@ export default function NosotrosPage() {
       {/* Misión y Visión */}
       <SectionWrapper bg="white">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div>
-            <SectionHeader label="01" title="Nuestra Misión" />
-            <p className="text-text-primary text-lg leading-relaxed font-sans">
+          {/* Misión */}
+          <div className="border-l-4 border-nova-blue pl-8">
+            <span className="label-tech text-nova-blue uppercase block mb-3">Nuestra Misión</span>
+            <h2 className="font-display font-black text-2xl text-nova-navy mb-4 leading-tight">
+              Impulsar la eficiencia industrial mediante medición de precisión
+            </h2>
+            <p className="text-text-primary text-base leading-relaxed font-sans mb-4">
               Impulsamos la eficiencia, confiabilidad y sostenibilidad de la industria de procesos en
               Colombia a través de soluciones de medición, automatización y control de última generación.
               Como socios estratégicos, integramos tecnologías de alta precisión — incluyendo medición
               no intrusiva — para resolver los desafíos críticos de operación.
             </p>
-            <p className="mt-4 text-text-muted text-base leading-relaxed font-sans">
-              Nos diferenciamos por ofrecer una consultoría técnica cercana y transferencia de
-              conocimiento constante, asegurando que nuestros clientes obtengan no solo la mejor
-              tecnología, sino el respaldo experto para garantizar disponibilidad operativa y
-              resultados tangibles.
+            <p className="text-text-muted text-sm leading-relaxed font-sans">
+              Nos diferenciamos por ofrecer consultoría técnica cercana y transferencia de conocimiento
+              constante, asegurando disponibilidad operativa y resultados tangibles.
             </p>
           </div>
-          <div>
-            <SectionHeader label="02" title="Nuestra Visión" />
-            <p className="text-text-primary text-lg leading-relaxed font-sans">
-              Consolidarnos como el referente técnico indiscutible en Colombia para la optimización
-              de procesos industriales, liderando el mercado mediante la integración de tecnologías
-              de medición y automatización de vanguardia.
+          {/* Visión */}
+          <div className="border-l-4 border-steel-dark pl-8">
+            <span className="label-tech text-text-muted uppercase block mb-3">Nuestra Visión</span>
+            <h2 className="font-display font-black text-2xl text-nova-navy mb-4 leading-tight">
+              El referente técnico indiscutible en Colombia para 2030
+            </h2>
+            <p className="text-text-primary text-base leading-relaxed font-sans mb-4">
+              Consolidarnos como el referente técnico en Colombia para la optimización de procesos
+              industriales, liderando el mercado mediante la integración de tecnologías de medición
+              y automatización de vanguardia.
             </p>
-            <p className="mt-4 text-text-muted text-base leading-relaxed font-sans">
-              Aspiramos a ser reconocidos no solo por la precisión de nuestras soluciones, sino por
-              nuestra capacidad de transformar desafíos complejos en eficiencia operativa y
-              sostenibilidad para nuestros clientes, construyendo relaciones de largo plazo basadas
-              en la transferencia de conocimiento, la excelencia en el servicio y la confianza absoluta.
+            <p className="text-text-muted text-sm leading-relaxed font-sans">
+              Reconocidos por nuestra capacidad de transformar desafíos complejos en eficiencia
+              operativa, construyendo relaciones de largo plazo basadas en confianza y excelencia técnica.
             </p>
           </div>
         </div>
@@ -176,20 +192,23 @@ export default function NosotrosPage() {
           centered
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {VALUES.map((v, i) => (
-            <article key={v.title} className="card-base p-6">
-              <span
-                className="font-mono text-xs text-nova-cyan font-bold mb-3 block"
-                aria-hidden="true"
+          {VALUES.map((v) => {
+            const Icon = v.icon;
+            return (
+              <article
+                key={v.title}
+                className="card-base p-6 group hover:border-nova-blue/40 transition-colors"
               >
-                0{i + 1}
-              </span>
-              <h3 className="font-display font-bold text-base text-text-primary mb-2">
-                {v.title}
-              </h3>
-              <p className="text-text-muted text-xs leading-relaxed font-sans">{v.description}</p>
-            </article>
-          ))}
+                <div className="w-10 h-10 rounded-lg bg-nova-cyan/10 border border-nova-cyan/20 flex items-center justify-center mb-4 group-hover:bg-nova-blue/10 group-hover:border-nova-blue/25 transition-colors">
+                  <Icon className="w-5 h-5 text-nova-blue" aria-hidden="true" />
+                </div>
+                <h3 className="font-display font-bold text-base text-text-primary mb-2">
+                  {v.title}
+                </h3>
+                <p className="text-text-muted text-xs leading-relaxed font-sans">{v.description}</p>
+              </article>
+            );
+          })}
         </div>
       </SectionWrapper>
 
@@ -204,15 +223,17 @@ export default function NosotrosPage() {
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-8">
             {[
-              { icon: "🏆", label: "Calidad", desc: "ISO 9001 como referente de excelencia técnica" },
-              { icon: "🦺", label: "Seguridad", desc: "SST: prevención de incidentes y bienestar del equipo" },
-              { icon: "🌿", label: "Medioambiente", desc: "Uso eficiente de recursos y prácticas responsables" },
-              { icon: "🤝", label: "Ética", desc: "Transparencia, integridad y responsabilidad en cada acción" },
-            ].map((item) => (
-              <div key={item.label} className="bg-white/5 border border-white/10 rounded-xl p-5 text-center hover:bg-white/10 transition-colors">
-                <span className="text-3xl mb-3 block" aria-hidden="true">{item.icon}</span>
-                <h3 className="font-display font-bold text-white mb-1">{item.label}</h3>
-                <p className="text-white/55 text-xs font-sans leading-relaxed">{item.desc}</p>
+              { Icon: Award,          label: "Calidad",        desc: "ISO 9001 como referente de excelencia técnica en cada proyecto" },
+              { Icon: ShieldCheck,    label: "Seguridad",      desc: "SST: prevención de incidentes y bienestar del equipo en campo" },
+              { Icon: Leaf,           label: "Medioambiente",  desc: "Uso eficiente de recursos y prácticas ambientalmente responsables" },
+              { Icon: HeartHandshake, label: "Ética",          desc: "Transparencia, integridad y responsabilidad en cada acción comercial" },
+            ].map(({ Icon, label, desc }) => (
+              <div key={label} className="bg-white/5 border border-white/10 rounded-xl p-6 text-center hover:bg-white/10 hover:border-nova-cyan/30 transition-all group">
+                <div className="w-12 h-12 rounded-xl bg-nova-cyan/10 border border-nova-cyan/20 flex items-center justify-center mx-auto mb-4 group-hover:bg-nova-cyan/20 transition-colors">
+                  <Icon className="w-6 h-6 text-nova-cyan" aria-hidden="true" />
+                </div>
+                <h3 className="font-display font-bold text-white mb-2">{label}</h3>
+                <p className="text-white/55 text-xs font-sans leading-relaxed">{desc}</p>
               </div>
             ))}
           </div>
