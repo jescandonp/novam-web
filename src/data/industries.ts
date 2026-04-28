@@ -16,7 +16,7 @@ export const industries: Industry[] = [
     ],
     image: "/images/industries/oil-gas.jpg",
     technologies: ["flexim"],
-    clients: ["Geopark", "Perenco", "Grantierra", "Ecopetrol"],
+    clients: ["Operador O&G · Llanos Orientales", "Operador O&G · Putumayo", "Operador O&G · Llanos Orientales", "Operador Nacional O&G"],
   },
   {
     slug: "energia",
@@ -33,7 +33,7 @@ export const industries: Industry[] = [
     ],
     image: "/images/industries/energia.jpg",
     technologies: ["flexim", "smar"],
-    clients: ["Termovalle", "EMCARTAGO", "Termoguajira", "Bioenergy"],
+    clients: ["Empresa Generadora · Valle del Cauca", "Empresa Generadora · Eje Cafetero", "Empresa Generadora · Caribe", "Empresa Generadora · Meta"],
   },
   {
     slug: "alimentos",
@@ -50,7 +50,7 @@ export const industries: Industry[] = [
     ],
     image: "/images/industries/alimentos.jpg",
     technologies: ["flexim", "smar"],
-    clients: ["Descafecol", "Smurfit Kappa"],
+    clients: ["Productor de Alimentos · Cundinamarca", "Industria de Empaques · Nacional"],
   },
   {
     slug: "agua",
@@ -67,7 +67,7 @@ export const industries: Industry[] = [
     ],
     image: "/images/industries/agua.jpg",
     technologies: ["flexim", "uwt"],
-    clients: ["GPK", "Smurfit Kappa"],
+    clients: ["Operador O&G · Llanos Orientales", "Industria de Empaques · Nacional"],
   },
   {
     slug: "quimica",
@@ -77,14 +77,14 @@ export const industries: Industry[] = [
     applications: [
       "Solventes y productos químicos agresivos",
       "Ácidos y bases industriales",
-      "Gases industriales especiales (Linde)",
+      "Gases industriales especiales (nitrógeno, CO₂, argón)",
       "Sulfato de manganeso y sales",
       "Líneas de suministro de reactivos",
       "Control de dosificación",
     ],
     image: "/images/industries/quimica.jpg",
     technologies: ["flexim", "smar", "uwt"],
-    clients: ["Linde", "Quintal"],
+    clients: ["Empresa de Gases Industriales · Nacional", "Empresa Química · Bogotá"],
   },
 ];
 
