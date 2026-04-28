@@ -87,7 +87,12 @@ const organizationSchema = {
   "@type": "Organization",
   name: "Nova Measurement SAS",
   url: "https://www.novam.com.co",
-  logo: "https://www.novam.com.co/images/logo.png",
+  logo: {
+    "@type": "ImageObject",
+    url: "https://www.novam.com.co/images/logo.png",
+    width: 400,
+    height: 150,
+  },
   description:
     "Distribuidor técnico especializado en medición industrial no intrusiva. Partner exclusivo Smar y distribuidor autorizado Flexim en Colombia.",
   telephone: "+573215354908",

@@ -2,57 +2,34 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, Phone } from "lucide-react";
 import { navItems, contactInfo } from "@/data/navigation";
 import { Button } from "@/components/ui/Button";
 import type { NavItem } from "@/types";
 
-/* ─── Logo SVG ───────────────────────────────────────────────── */
+/* ─── Logo ───────────────────────────────────────────────────── */
+/* white=true → navbar oscuro: filtro CSS invierte a blanco      */
+/* white=false → fondo claro: logo original a color              */
 function Logo({ white = false }: { white?: boolean }) {
   return (
     <Link
       href="/"
       aria-label="Nova Measurement — Inicio"
-      className="flex items-center gap-2.5 shrink-0"
+      className="flex items-center shrink-0"
     >
-      {/* Isotipo: tres cubos isométricos simplificados */}
-      <svg
-        width="36"
-        height="36"
-        viewBox="0 0 36 36"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-hidden="true"
-      >
-        {/* Cubo grande */}
-        <polygon points="18,2 30,9 30,23 18,30 6,23 6,9" fill={white ? "#00A8E8" : "#0056B3"} />
-        <polygon points="18,2 30,9 18,16 6,9" fill={white ? "#FFFFFF" : "#0A192F"} opacity="0.6" />
-        <polygon points="18,16 30,9 30,23 18,30" fill={white ? "#00A8E8" : "#003D80"} />
-        {/* Cubo pequeño superior derecha */}
-        <polygon points="28,1 34,4.5 34,11 28,14 22,10.5 22,4" fill={white ? "#FFFFFF" : "#E0E5EC"} opacity="0.85" />
-        {/* Cubo pequeño inferior izquierda */}
-        <polygon points="8,25 14,28.5 14,35 8,38 2,34.5 2,28" fill={white ? "#00A8E8" : "#0056B3"} opacity="0.7" />
-      </svg>
-
-      <div className="flex flex-col leading-none">
-        <span
-          className={[
-            "font-display font-black text-xl tracking-tight",
-            white ? "text-white" : "text-nova-navy",
-          ].join(" ")}
-        >
-          nova
-        </span>
-        <span
-          className={[
-            "font-sans text-[9px] font-medium tracking-[0.18em] uppercase",
-            white ? "text-nova-cyan" : "text-nova-blue",
-          ].join(" ")}
-        >
-          MEASUREMENT
-        </span>
-      </div>
+      <Image
+        src="/images/logo.png"
+        alt="Nova Measurement"
+        width={160}
+        height={60}
+        priority
+        className={[
+          "h-10 w-auto object-contain",
+          white ? "brightness-0 invert" : "",
+        ].join(" ")}
+      />
     </Link>
   );
 }

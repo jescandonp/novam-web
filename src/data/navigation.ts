@@ -6,10 +6,10 @@ export const navItems: NavItem[] = [
     href: "/soluciones",
     children: [
       { label: "Oil & Gas", href: "/soluciones/oil-gas" },
-      { label: "Generación de Energía", href: "/soluciones/generacion-energia" },
-      { label: "Alimentos & Bebidas", href: "/soluciones/alimentos-bebidas" },
-      { label: "Agua & Saneamiento", href: "/soluciones/agua-saneamiento" },
-      { label: "Química & Petroquímica", href: "/soluciones/quimica-petroquimica" },
+      { label: "Generación de Energía", href: "/soluciones/energia" },
+      { label: "Alimentos & Bebidas", href: "/soluciones/alimentos" },
+      { label: "Agua & Saneamiento", href: "/soluciones/agua" },
+      { label: "Química & Petroquímica", href: "/soluciones/quimica" },
     ],
   },
   {
