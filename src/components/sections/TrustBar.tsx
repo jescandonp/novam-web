@@ -1,16 +1,15 @@
-/* ─── Clientes anonimizados por política de confidencialidad ─── */
 const CLIENTS = [
-  "Operador O&G · Llanos Orientales",
-  "Operador O&G · Putumayo",
-  "Empresa Generadora · Valle del Cauca",
-  "Empresa Generadora · Eje Cafetero",
-  "Empresa Generadora · Caribe",
-  "Distribuidora de Gas · Costa Atlántica",
-  "Gases Industriales · Nacional",
-  "Productor de Alimentos · Cundinamarca",
-  "Industria de Empaques · Nacional",
-  "Operador O&G · Llanos Orientales",
-  "Empresa Agroindustrial · Cundinamarca",
+  "Geopark",
+  "Perenco Colombia",
+  "Termoguajira",
+  "Gases del Caribe",
+  "Termovalle",
+  "Bioenergy",
+  "Linde",
+  "Smurfit Kappa",
+  "Grantierra",
+  "EMCARTAGO",
+  "Descafecol",
 ];
 
 export function TrustBar() {
