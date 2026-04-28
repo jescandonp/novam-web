@@ -14,6 +14,12 @@ const PARTNERS = [
   { name: "UWT", label: "ALIANZA ESTRATÉGICA" },
 ];
 
+const HERO_STATS = [
+  { value: "50+", label: "Instalaciones en Colombia" },
+  { value: "0", label: "Paradas de planta en instalación" },
+  { value: "3", label: "Tecnologías líderes mundiales" },
+];
+
 /* Variantes de animación framer-motion */
 const containerVariants = {
   hidden: {},
@@ -58,11 +64,12 @@ export function Hero() {
 
       {/* Contenido */}
       <div className="relative z-10 container mx-auto max-w-[1280px] px-6 lg:px-8 pt-28 pb-20">
+        <div className="flex flex-col lg:flex-row items-start justify-between gap-12">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={mounted ? "visible" : "hidden"}
-          className="max-w-3xl"
+          className="max-w-2xl"
         >
           {/* Badge distribuidor */}
           <motion.div variants={itemVariants}>
@@ -122,6 +129,29 @@ export function Hero() {
             ))}
           </motion.div>
         </motion.div>
+
+          {/* KPI cards — desktop right panel */}
+          <motion.div
+            initial={{ opacity: 0, x: 32 }}
+            animate={mounted ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            className="hidden lg:flex flex-col gap-3 shrink-0 w-56"
+          >
+            {HERO_STATS.map((stat) => (
+              <div
+                key={stat.label}
+                className="bg-white/8 backdrop-blur-sm border border-white/15 rounded-xl p-4"
+              >
+                <p className="font-display font-black text-3xl text-nova-cyan leading-none mb-1">
+                  {stat.value}
+                </p>
+                <p className="text-white/60 text-xs font-sans leading-tight">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </motion.div>
+        </div>
       </div>
 
       {/* Scroll indicator */}

@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Image from "next/image";
-import { CheckCircle, MapPin, Calendar, Gauge, ArrowRight } from "lucide-react";
+import { CheckCircle2, MapPin, Calendar, Gauge, ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/ui/PageHero";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
@@ -116,18 +116,21 @@ export default async function CaseStudyPage({
               </p>
             </section>
 
-            {/* Resultados */}
+            {/* Resultados — grid de cards */}
             <section aria-labelledby="section-resultados">
               <h2 id="section-resultados" className="heading-md text-text-primary mb-5 accent-line">
                 Resultados obtenidos
               </h2>
-              <ul className="space-y-4">
-                {cs.highlights.map((h) => (
-                  <li key={h} className="flex items-start gap-3.5">
-                    <div className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center shrink-0 mt-0.5">
-                      <CheckCircle className="w-4 h-4 text-success" aria-hidden="true" />
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {cs.highlights.map((h, i) => (
+                  <li
+                    key={h}
+                    className="flex items-start gap-3.5 p-4 rounded-xl border border-steel bg-white hover:border-nova-blue/40 hover:shadow-sm transition-all"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-nova-cyan/10 border border-nova-cyan/20 flex items-center justify-center shrink-0 mt-0.5">
+                      <CheckCircle2 className="w-4.5 h-4.5 text-nova-blue" aria-hidden="true" />
                     </div>
-                    <span className="text-text-primary text-base font-sans">{h}</span>
+                    <span className="text-text-primary text-sm font-sans leading-relaxed">{h}</span>
                   </li>
                 ))}
               </ul>
