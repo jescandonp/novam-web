@@ -82,4 +82,6 @@ export function StatsBar() {
           ))}
         </dl>
       </div>
-    </sectio
+    </section>
+  );
+}

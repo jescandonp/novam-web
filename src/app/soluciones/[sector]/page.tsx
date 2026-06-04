@@ -65,6 +65,11 @@ const SECTOR_FAQS: Record<string, FaqItem[]> = {
       answer:
         "Crudo liviano y pesado, gas natural, gas a tea (venteo), agua de inyección, agua de producción, diluyente, fuel oil, gas combustible para turbinas y mezclas multifásicas. Para fluidos con alto contenido de gas libre (GVF > 5%) se recomienda una consultoría técnica específica.",
     },
+    {
+      question: "¿Qué aporta Smar en una instalación de Oil & Gas?",
+      answer:
+        "Smar complementa la medición de caudal Flexim con instrumentación completa de proceso: transmisores de presión y temperatura (series LD300/TT301), posicionadores de válvulas de control (FY300/FY400) y sistemas Foundation Fieldbus para integración con DCS. Sus ventajas clave en O&G son el ajuste local completo en campo (sin laptop ni software especial), cortos tiempos de entrega gracias a stock disponible en Colombia, y certificaciones ATEX/IECEx para zonas clasificadas.",
+    },
   ],
   energia: [
     {
@@ -127,7 +132,7 @@ const SECTOR_FAQS: Record<string, FaqItem[]> = {
 };
 
 /* ─── Ventajas por sector ───────────────────────────────────── */
-const ADVANTAGES = [
+const ADVANTAGES_FLEXIM = [
   {
     icon: <ShieldCheck className="w-6 h-6" aria-hidden="true" />,
     title: "Sin riesgo operativo",
@@ -147,6 +152,29 @@ const ADVANTAGES = [
     icon: <CheckCircle className="w-6 h-6" aria-hidden="true" />,
     title: "Certificaciones internacionales",
     desc: "ATEX, IECEx, API, AGA, FDA según la industria. Cumplimiento normativo garantizado.",
+  },
+];
+
+const ADVANTAGES_SMAR = [
+  {
+    icon: <Wrench className="w-6 h-6" aria-hidden="true" />,
+    title: "Ajuste local completo",
+    desc: "Configuración y calibración en campo sin laptop ni software externo. Agilidad en comisionamiento.",
+  },
+  {
+    icon: <Zap className="w-6 h-6" aria-hidden="true" />,
+    title: "Cortos tiempos de entrega",
+    desc: "Stock disponible en Colombia. Reposición rápida sin depender de importación en cada pedido.",
+  },
+  {
+    icon: <CheckCircle className="w-6 h-6" aria-hidden="true" />,
+    title: "Instrumentación completa de proceso",
+    desc: "Presión, temperatura, densidad, concentración y posición — un solo proveedor, un solo soporte.",
+  },
+  {
+    icon: <ShieldCheck className="w-6 h-6" aria-hidden="true" />,
+    title: "Certificaciones ATEX / IECEx",
+    desc: "Equipos certificados para zonas clasificadas. Integración Foundation Fieldbus con DCS existente.",
   },
 ];
 
@@ -250,28 +278,68 @@ export default async function SolutionPage({
 
           {/* Ventajas */}
           <div>
-            <SectionHeader
-              label="Ventajas clave"
-              title="Por qué elegir medición no intrusiva"
-            />
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              {ADVANTAGES.map((adv) => (
-                <div
-                  key={adv.title}
-                  className="p-5 bg-nova-cyan-light border border-nova-cyan/20 rounded-xl"
-                >
-                  <div className="w-10 h-10 bg-nova-blue/10 rounded-lg flex items-center justify-center text-nova-blue mb-3">
-                    {adv.icon}
+            {industry.technologies.includes("smar") && !industry.technologies.includes("flexim") ? (
+              <SectionHeader
+                label="Ventajas clave"
+                title="Por qué elegir Smar"
+              />
+            ) : industry.technologies.includes("smar") ? (
+              <SectionHeader
+                label="Ventajas clave"
+                title="Flexim + Smar: lo mejor de cada tecnología"
+              />
+            ) : (
+              <SectionHeader
+                label="Ventajas clave"
+                title="Por qué elegir medición no intrusiva"
+              />
+            )}
+
+            {/* Si el sector tiene Smar, mostramos ambos sets en tabs visuales */}
+            {industry.technologies.includes("smar") && industry.technologies.includes("flexim") ? (
+              <div className="space-y-6">
+                <div>
+                  <p className="label-tech text-nova-blue mb-3">Flexim — medición no intrusiva</p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {ADVANTAGES_FLEXIM.slice(0, 2).map((adv) => (
+                      <div key={adv.title} className="p-5 bg-nova-cyan-light border border-nova-cyan/20 rounded-xl">
+                        <div className="w-10 h-10 bg-nova-blue/10 rounded-lg flex items-center justify-center text-nova-blue mb-3">
+                          {adv.icon}
+                        </div>
+                        <h3 className="font-display font-bold text-sm text-text-primary mb-1">{adv.title}</h3>
+                        <p className="text-text-muted text-xs leading-relaxed font-sans">{adv.desc}</p>
+                      </div>
+                    ))}
                   </div>
-                  <h3 className="font-display font-bold text-sm text-text-primary mb-1">
-                    {adv.title}
-                  </h3>
-                  <p className="text-text-muted text-xs leading-relaxed font-sans">
-                    {adv.desc}
-                  </p>
                 </div>
-              ))}
-            </div>
+                <div>
+                  <p className="label-tech text-nova-blue mb-3">Smar — instrumentación de proceso</p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {ADVANTAGES_SMAR.slice(0, 2).map((adv) => (
+                      <div key={adv.title} className="p-5 bg-steel/30 border border-steel rounded-xl">
+                        <div className="w-10 h-10 bg-nova-blue/10 rounded-lg flex items-center justify-center text-nova-blue mb-3">
+                          {adv.icon}
+                        </div>
+                        <h3 className="font-display font-bold text-sm text-text-primary mb-1">{adv.title}</h3>
+                        <p className="text-text-muted text-xs leading-relaxed font-sans">{adv.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                {(industry.technologies.includes("smar") ? ADVANTAGES_SMAR : ADVANTAGES_FLEXIM).map((adv) => (
+                  <div key={adv.title} className="p-5 bg-nova-cyan-light border border-nova-cyan/20 rounded-xl">
+                    <div className="w-10 h-10 bg-nova-blue/10 rounded-lg flex items-center justify-center text-nova-blue mb-3">
+                      {adv.icon}
+                    </div>
+                    <h3 className="font-display font-bold text-sm text-text-primary mb-1">{adv.title}</h3>
+                    <p className="text-text-muted text-xs leading-relaxed font-sans">{adv.desc}</p>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </SectionWrapper>

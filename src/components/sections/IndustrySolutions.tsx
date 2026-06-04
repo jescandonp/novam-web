@@ -108,4 +108,12 @@ export function IndustrySolutions() {
 
           <Button
             href={`/soluciones/${current.slug}`}
-            icon={<ArrowRi
+            icon={<ArrowRight className="w-4 h-4" />}
+          >
+            Ver solución completa
+          </Button>
+        </div>
+      </div>
+    </SectionWrapper>
+  );
+}

@@ -103,4 +103,29 @@ export function CasesPreview() {
 
             {/* Sector badge top-left */}
             <div className="absolute top-3 left-3">
-              <Badge variant="sector">{SECTOR_LABELS[cs.sector]}</Ba
+              <Badge variant="sector">{SECTOR_LABELS[cs.sector]}</Badge>
+            </div>
+
+            {/* Contenido overlay bottom */}
+            <div className="absolute inset-x-0 bottom-0 p-5">
+              <div className="flex items-center gap-1.5 mb-1.5">
+                <MapPin className="w-3 h-3 text-nova-cyan shrink-0" aria-hidden="true" />
+                <span className="label-tech text-nova-cyan text-[10px]">{cs.location.split(",")[0]}</span>
+              </div>
+              <h3 className="font-display font-bold text-sm text-white leading-tight line-clamp-2">
+                {cs.title}
+              </h3>
+            </div>
+          </Link>
+        ))}
+      </div>
+
+      {/* CTA ver todos */}
+      <div className="mt-10 text-center">
+        <Button href="/casos-de-exito" variant="secondary" size="lg">
+          Ver todos los casos de éxito
+        </Button>
+      </div>
+    </SectionWrapper>
+  );
+}

@@ -5,17 +5,19 @@ export const industries: Industry[] = [
     slug: "oil-gas",
     name: "Oil & Gas",
     description:
-      "Medición precisa en las condiciones más exigentes de la industria petrolera colombiana. Crudo, gas natural, agua de inyección y diluyente — sin contacto, sin parar la producción.",
+      "Medición y control de procesos para la industria petrolera colombiana. Caudal sin contacto con Flexim e instrumentación de proceso completa con Smar — presión, temperatura, posición y densidad — con soporte local y stock disponible.",
     applications: [
-      "Caudal de crudo en ductos activos",
-      "Gas natural en city gates y estaciones",
-      "Gas a tea (venteo) y gas de proceso",
-      "Agua de inyección en yacimientos",
-      "Diluyente en transporte",
-      "Fuel oil para quemadores industriales",
+      "Caudal de crudo en ductos activos (Flexim clamp-on)",
+      "Gas natural en city gates y estaciones (Flexim)",
+      "Gas a tea (venteo) y gas de proceso (Flexim)",
+      "Agua de inyección en yacimientos (Flexim)",
+      "Presión y temperatura en líneas de producción (Smar)",
+      "Posicionadores de válvulas de control (Smar)",
+      "Densidad y concentración en proceso (Flexim / Smar)",
+      "Fuel oil para quemadores y turbinas (Flexim)",
     ],
     image: "/images/industries/oil-gas.jpg",
-    technologies: ["flexim"],
+    technologies: ["flexim", "smar"],
     clients: ["Operador O&G · Llanos Orientales", "Operador O&G · Putumayo", "Operador O&G · Llanos Orientales", "Operador Nacional O&G"],
   },
   {
@@ -80,4 +82,14 @@ export const industries: Industry[] = [
       "Gases industriales especiales (nitrógeno, CO₂, argón)",
       "Sulfato de manganeso y sales",
       "Líneas de suministro de reactivos",
-      "Control de 
+      "Control de dosificación",
+    ],
+    image: "/images/industries/quimica.jpg",
+    technologies: ["flexim", "smar", "uwt"],
+    clients: ["Empresa de Gases Industriales · Nacional", "Empresa Química · Bogotá"],
+  },
+];
+
+export function getIndustryBySlug(slug: string): Industry | undefined {
+  return industries.find((i) => i.slug === slug);
+}

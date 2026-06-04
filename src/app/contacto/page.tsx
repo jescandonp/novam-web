@@ -380,4 +380,11 @@ export default function ContactoPage() {
                 <p className="text-white/65 text-sm font-sans">
                   Tiempo de respuesta técnica garantizado para todas las solicitudes recibidas.
                 </p>
-        
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}

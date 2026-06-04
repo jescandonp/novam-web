@@ -108,9 +108,12 @@ export default async function CaseStudyPage({
 
             {/* Resumen */}
             <section aria-labelledby="section-resumen">
-              <h2 id="section-resumen" className="heading-md text-nova-blue mb-4 label-tech">
-                El Proyecto
-              </h2>
+              <div className="flex items-center gap-4 text-nova-blue mb-4">
+                <span className="block w-10 h-0.5 bg-nova-blue" aria-hidden="true" />
+                <h2 id="section-resumen" className="label-tech uppercase tracking-widest">
+                  El Proyecto
+                </h2>
+              </div>
               <p className="text-text-primary text-base leading-relaxed font-sans">
                 {cs.summary}
               </p>
@@ -138,30 +141,54 @@ export default async function CaseStudyPage({
 
             {/* Tecnología utilizada */}
             {tech && (
-              <section aria-labelledby="section-tech" className="p-6 bg-nova-cyan-light border border-nova-cyan/20 rounded-2xl">
-                <h2 id="section-tech" className="label-tech text-nova-blue mb-4">
-                  Tecnología utilizada
-                </h2>
-                <div className="flex items-start gap-5">
-                  <div className="w-14 h-14 rounded-xl bg-nova-blue flex items-center justify-center shrink-0">
-                    <Gauge className="w-7 h-7 text-white" aria-hidden="true" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="font-display font-bold text-lg text-text-primary mb-1">{tech.name}</h3>
-                    <p className="text-text-muted text-sm font-sans mb-3">{tech.tagline}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {tech.features.slice(0, 3).map((f) => (
-                        <span key={f} className="px-2.5 py-1 bg-white border border-nova-cyan/30 text-nova-blue text-xs font-sans rounded-full">
-                          {f}
-                        </span>
-                      ))}
+              <section
+                aria-labelledby="section-tech"
+                className="bg-nova-navy rounded-xl overflow-hidden"
+              >
+                <div className="p-8">
+                  <span className="label-tech text-nova-cyan mb-5 block">TECNOLOGÍA UTILIZADA</span>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 items-center">
+                    {/* Texto + tags */}
+                    <div>
+                      <h3
+                        id="section-tech"
+                        className="font-display font-black text-2xl text-white leading-tight mb-2"
+                      >
+                        {tech.name}
+                      </h3>
+                      <p className="text-white/55 text-sm font-sans mb-5">{tech.tagline}</p>
+                      <div className="flex flex-wrap gap-2 mb-6">
+                        {tech.features.slice(0, 3).map((f) => (
+                          <span
+                            key={f}
+                            className="bg-white/8 px-3 py-1.5 text-[10px] font-sans tracking-wider text-white/70 border border-white/15 uppercase"
+                          >
+                            {f}
+                          </span>
+                        ))}
+                      </div>
+                      <Button
+                        href={`/tecnologias/${tech.slug}`}
+                        size="sm"
+                        variant="secondary"
+                        icon={<ArrowRight className="w-3.5 h-3.5" />}
+                      >
+                        Ver tecnología completa
+                      </Button>
+                    </div>
+
+                    {/* Ícono decorativo */}
+                    <div className="flex justify-center sm:justify-end">
+                      <div className="relative">
+                        <div className="w-32 h-32 bg-white/5 border border-white/15 flex items-center justify-center">
+                          <Gauge className="w-16 h-16 text-white/20" aria-hidden="true" />
+                        </div>
+                        <div className="absolute -top-3 -right-3 w-10 h-10 bg-nova-blue flex items-center justify-center">
+                          <Gauge className="w-5 h-5 text-white" aria-hidden="true" />
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="mt-4 pt-4 border-t border-nova-cyan/20">
-                  <Button href={`/tecnologias/${tech.slug}`} size="sm" variant="secondary" icon={<ArrowRight className="w-3.5 h-3.5" />}>
-                    Ver tecnología completa
-                  </Button>
                 </div>
               </section>
             )}
@@ -249,3 +276,18 @@ export default async function CaseStudyPage({
             </div>
           </aside>
         </div>
+      </SectionWrapper>
+
+      {/* Casos relacionados */}
+      {related.length > 0 && (
+        <RelatedCases
+          cases={related}
+          title="Más casos en este sector"
+          bg="light"
+        />
+      )}
+
+      <CTABanner />
+    </>
+  );
+}

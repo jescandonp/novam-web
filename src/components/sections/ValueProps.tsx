@@ -20,17 +20,17 @@ const VALUE_PROPS = [
   {
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8" aria-hidden="true">
-        {/* Reloj industrial / uptime */}
-        <circle cx="12" cy="12" r="9" />
-        <polyline points="12 7 12 12 15.5 12" />
-        <path d="M16.5 3.5l1.5 1.5M7.5 3.5L6 5" />
-        <path d="M3 12h1m17 0h-1M12 20v1" />
+        {/* Panel de instrumentos industriales */}
+        <rect x="2" y="3" width="20" height="14" rx="2" />
+        <circle cx="8" cy="10" r="2.5" />
+        <path d="M8 7.5V6M5.5 10H4M10.5 10H8" />
+        <path d="M14 7h5M14 10h5M14 13h3" />
       </svg>
     ),
-    title: "Cero paradas de planta",
+    title: "Instrumentación completa Smar",
     description:
-      "Comisione nuevos puntos de medición con el proceso activo, a plena presión y temperatura. Instalación en horas, no en días. Sin necesidad de vaciado ni purga de líneas.",
-    highlight: "Instalación en campo activo",
+      "Más allá del caudal: presión, temperatura, densidad, concentración y posición de válvulas con instrumentación Smar. Ajuste local completo en campo, cortos tiempos de entrega y stock disponible en Colombia.",
+    highlight: "Presión · Temperatura · Posición",
   },
   {
     icon: (
@@ -54,7 +54,7 @@ export function ValueProps() {
       <SectionHeader
         label="Por qué Nova Measurement"
         title="La diferencia que mide"
-        subtitle="Tres razones por las que los ingenieros de instrumentación en Colombia confían en nosotros para sus procesos más críticos."
+        subtitle="Tres razones por las que los ingenieros de instrumentación en Colombia confían en Nova Measurement para sus procesos más críticos."
         centered
       />
 
@@ -82,4 +82,11 @@ export function ValueProps() {
 
             {/* Highlight */}
             <div className="mt-auto pt-4 border-t border-steel">
-  
+              <span className="label-tech text-nova-blue">✓ {prop.highlight}</span>
+            </div>
+          </article>
+        ))}
+      </div>
+    </SectionWrapper>
+  );
+}
