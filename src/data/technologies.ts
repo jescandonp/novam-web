@@ -56,7 +56,7 @@ export const technologies: Technology[] = [
     name: "UWT",
     tagline: "Medición de nivel industrial",
     description:
-      "Tecnología alemana líder en medición de nivel para silos, tanques y procesos industriales. Alianza estratégica con Nova Measurement para traer las soluciones UWT a la industria colombiana.",
+      "Tecnología alemana líder en medición de nivel para silos, tanques y procesos industriales. Nova Measurement es Distribuidor Autorizado de UWT en Colombia.",
     logo: "/images/logos/uwt.svg",
     accentColor: "#0056B3",
     features: [

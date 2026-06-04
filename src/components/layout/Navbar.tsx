@@ -20,13 +20,13 @@ function Logo({ white = false }: { white?: boolean }) {
       className="flex items-center shrink-0"
     >
       <Image
-        src="/images/logo.png"
+        src="/images/logo.jpg"
         alt="Nova Measurement"
-        width={160}
-        height={60}
+        width={140}
+        height={56}
         priority
         className={[
-          "h-10 w-auto object-contain",
+          "h-12 w-auto object-contain",
           white ? "brightness-0 invert" : "",
         ].join(" ")}
       />

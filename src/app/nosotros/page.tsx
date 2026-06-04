@@ -129,7 +129,7 @@ const ALLIANCES = [
   },
   {
     name: "UWT",
-    role: "Alianza Estratégica",
+    role: "Distribuidor Autorizado",
     detail: "Tecnología alemana de medición de nivel. 6 años de garantía. 90+ países.",
   },
 ];

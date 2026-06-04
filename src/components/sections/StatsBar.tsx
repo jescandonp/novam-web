@@ -7,7 +7,7 @@ const STATS = [
   { value: 3, suffix: "", label: "Tecnologías líderes mundiales" },
   { value: 10, suffix: "+", label: "Sectores industriales" },
   { value: 6, suffix: "+", label: "Años como partner Smar" },
-  { value: 5, suffix: "", label: "Ciudades con presencia directa" },
+  { value: 4, suffix: "", label: "Ciudades con presencia directa" },
 ];
 
 function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
