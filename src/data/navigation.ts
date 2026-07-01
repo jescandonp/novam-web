@@ -53,5 +53,5 @@ export const contactInfo = {
   phoneHref: "tel:+573215354908",
   whatsapp: "https://wa.me/573215354908",
   email: "info@novam.com.co",
-  cities: ["Bogotá", "Barranquilla", "Bucaramanga"],
+  cities: ["Barranquilla", "Bogotá", "Bucaramanga", "Cali"],
 };
