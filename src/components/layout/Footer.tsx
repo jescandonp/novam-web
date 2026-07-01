@@ -6,9 +6,9 @@ import { navItems, contactInfo } from "@/data/navigation";
 const ZONE_CONTACTS = [
   { zone: "Gerencia", city: "Barranquilla", name: "Antonio Sancivier", phone: "+57 321 535 4908", phoneHref: "tel:+573215354908" },
   { zone: "Centro · Llanos", city: "Bogotá", name: "Cristian Medina", phone: "+57 311 870 7943", phoneHref: "tel:+573118707943" },
-  { zone: "Santander", city: "Bucaramanga", name: "Brandon Delgado", phone: "+57 316 749 8585", phoneHref: "tel:+573167498585" },
+  { zone: "Santanderes", city: "Bucaramanga", name: "Brandon Delgado", phone: "+57 316 749 8585", phoneHref: "tel:+573167498585" },
   { zone: "Zona Norte", city: "Barranquilla", name: "Nikol Carrillo", phone: "+57 300 616 6214", phoneHref: "tel:+573006166214" },
-  { zone: "Pacífico · Sur", city: "Cali", name: "Carolina González", phone: "+57 310 879 0678", phoneHref: "tel:+573108790678" },
+  { zone: "Occidente", city: "Cali", name: "Carolina González", phone: "+57 310 879 0678", phoneHref: "tel:+573108790678" },
 ];
 
 function FooterLogo() {

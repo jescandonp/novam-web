@@ -89,7 +89,7 @@ const OFFICES = [
   },
   {
     city: "Bucaramanga",
-    role: "Zona Santander",
+    role: "Zona Santanderes",
     region: "Santander",
     name: "Brandon Delgado",
     phone: "+57 316 749 8585",
@@ -107,7 +107,7 @@ const OFFICES = [
   },
   {
     city: "Cali",
-    role: "Zona Pacífico · Sur",
+    role: "Zona Occidente",
     region: "Valle del Cauca",
     name: "Carolina González",
     phone: "+57 310 879 0678",

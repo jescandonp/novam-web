@@ -62,7 +62,7 @@ const ZONE_CONTACTS = [
     email: "cmedina@novam.com.co",
   },
   {
-    zone: "Zona Santander",
+    zone: "Zona Santanderes",
     city: "Bucaramanga",
     name: "Brandon Delgado",
     phone: "+57 316 749 8585",
@@ -80,7 +80,7 @@ const ZONE_CONTACTS = [
     email: "ncarrillo@novam.com.co",
   },
   {
-    zone: "Zona Pacífico · Sur",
+    zone: "Zona Occidente",
     city: "Cali",
     name: "Carolina González",
     phone: "+57 310 879 0678",
