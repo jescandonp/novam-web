@@ -71,7 +71,7 @@ const VALUES = [
 const OFFICES = [
   {
     city: "Barranquilla",
-    role: "Gerencia General",
+    role: "Gerencia General · Zona Norte",
     region: "Atlántico",
     name: "Antonio Sancivier",
     phone: "+57 321 535 4908",
@@ -95,15 +95,6 @@ const OFFICES = [
     phone: "+57 316 749 8585",
     phoneHref: "tel:+573167498585",
     email: "bdelgado@novam.com.co",
-  },
-  {
-    city: "Barranquilla",
-    role: "Zona Norte",
-    region: "Atlántico",
-    name: "Nikol Carrillo",
-    phone: "+57 300 616 6214",
-    phoneHref: "tel:+573006166214",
-    email: "ncarrillo@novam.com.co",
   },
   {
     city: "Cali",

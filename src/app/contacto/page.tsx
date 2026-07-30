@@ -44,7 +44,7 @@ const APPLICATIONS = [
 /* Ingenieros por zona — coherente con /nosotros */
 const ZONE_CONTACTS = [
   {
-    zone: "Gerencia General",
+    zone: "Gerencia General · Zona Norte",
     city: "Barranquilla",
     name: "Antonio Sancivier",
     phone: "+57 321 535 4908",
@@ -69,15 +69,6 @@ const ZONE_CONTACTS = [
     phoneHref: "tel:+573167498585",
     whatsapp: "https://wa.me/573167498585",
     email: "bdelgado@novam.com.co",
-  },
-  {
-    zone: "Zona Norte",
-    city: "Barranquilla",
-    name: "Nikol Carrillo",
-    phone: "+57 300 616 6214",
-    phoneHref: "tel:+573006166214",
-    whatsapp: "https://wa.me/573006166214",
-    email: "ncarrillo@novam.com.co",
   },
   {
     zone: "Zona Occidente",
