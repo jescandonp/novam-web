@@ -4,7 +4,7 @@ import { navItems, contactInfo } from "@/data/navigation";
 
 /* Ingenieros por zona — coherente con /nosotros */
 const ZONE_CONTACTS = [
-  { zone: "Gerencia · Zona Norte", city: "Barranquilla", name: "Antonio Sancivier", phone: "+57 321 535 4908", phoneHref: "tel:+573215354908" },
+  { zone: "Gerencia General · Zona Norte", city: "Barranquilla", name: "Antonio Sancivier", phone: "+57 321 535 4908", phoneHref: "tel:+573215354908" },
   { zone: "Centro · Llanos", city: "Bogotá", name: "Cristian Medina", phone: "+57 311 870 7943", phoneHref: "tel:+573118707943" },
   { zone: "Santanderes", city: "Bucaramanga", name: "Brandon Delgado", phone: "+57 316 749 8585", phoneHref: "tel:+573167498585" },
   { zone: "Occidente", city: "Cali", name: "Carolina González", phone: "+57 310 879 0678", phoneHref: "tel:+573108790678" },
