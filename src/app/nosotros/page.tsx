@@ -71,12 +71,12 @@ const VALUES = [
 const OFFICES = [
   {
     city: "Barranquilla",
-    role: "Gerencia General",
+    role: "Gerencia General · Zona Norte",
     region: "Atlántico",
     name: "Antonio Sancivier",
     phone: "+57 321 535 4908",
     phoneHref: "tel:+573215354908",
-    email: "asancivier@novam.com.co",
+    email: "asancivier@novam.net.co",
   },
   {
     city: "Bogotá",
@@ -85,7 +85,7 @@ const OFFICES = [
     name: "Cristian Medina",
     phone: "+57 311 870 7943",
     phoneHref: "tel:+573118707943",
-    email: "cmedina@novam.com.co",
+    email: "cmedina@novam.net.co",
   },
   {
     city: "Bucaramanga",
@@ -94,16 +94,7 @@ const OFFICES = [
     name: "Brandon Delgado",
     phone: "+57 316 749 8585",
     phoneHref: "tel:+573167498585",
-    email: "bdelgado@novam.com.co",
-  },
-  {
-    city: "Barranquilla",
-    role: "Zona Norte",
-    region: "Atlántico",
-    name: "Nikol Carrillo",
-    phone: "+57 300 616 6214",
-    phoneHref: "tel:+573006166214",
-    email: "ncarrillo@novam.com.co",
+    email: "bdelgado@novam.net.co",
   },
   {
     city: "Cali",
@@ -112,7 +103,7 @@ const OFFICES = [
     name: "Carolina González",
     phone: "+57 310 879 0678",
     phoneHref: "tel:+573108790678",
-    email: "cgonzalez@novam.com.co",
+    email: "cgonzalez@novam.net.co",
   },
 ];
 

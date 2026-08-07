@@ -30,7 +30,7 @@ const robotoMono = Roboto_Mono({
 /* ─── SEO Default Metadata ──────────────────────────────────── */
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.novam.com.co"
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.novam.net.co"
   ),
   title: {
     default: "Nova Measurement | Medición Industrial No Intrusiva en Colombia",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "es_CO",
-    url: "https://www.novam.com.co",
+    url: "https://www.novam.net.co",
     siteName: "Nova Measurement",
     title: "Nova Measurement | Medición Industrial No Intrusiva en Colombia",
     description:
@@ -86,17 +86,17 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Nova Measurement SAS",
-  url: "https://www.novam.com.co",
+  url: "https://www.novam.net.co",
   logo: {
     "@type": "ImageObject",
-    url: "https://www.novam.com.co/images/logo.png",
+    url: "https://www.novam.net.co/images/logo.png",
     width: 400,
     height: 150,
   },
   description:
     "Distribuidor técnico especializado en medición industrial no intrusiva. Partner exclusivo Smar y distribuidor autorizado Flexim en Colombia.",
   telephone: "+573215354908",
-  email: "info@novam.com.co",
+  email: "info@novam.net.co",
   address: [
     {
       "@type": "PostalAddress",

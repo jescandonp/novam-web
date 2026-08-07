@@ -53,7 +53,7 @@ export async function POST(req: NextRequest) {
 
   const d = parsed.data;
 
-  const emailTo = process.env.CONTACT_EMAIL_TO ?? "info@novam.com.co";
+  const emailTo = process.env.CONTACT_EMAIL_TO ?? "info@novam.net.co";
 
   /* Email al equipo Nova */
   const internalHtml = `
@@ -84,7 +84,7 @@ export async function POST(req: NextRequest) {
         </div>
       </div>
       <p style="color: #CBD5E1; font-size: 11px; text-align: center; margin-top: 16px;">
-        Nova Measurement SAS · novam.com.co
+        Nova Measurement SAS · novam.net.co
       </p>
     </div>
   `;
@@ -116,7 +116,7 @@ export async function POST(req: NextRequest) {
         <p style="color: #1A2332;">Cordial saludo,<br/><strong>Equipo Nova Measurement</strong></p>
       </div>
       <p style="color: #CBD5E1; font-size: 11px; text-align: center; margin-top: 16px;">
-        Nova Measurement SAS · info@novam.com.co · novam.com.co
+        Nova Measurement SAS · info@novam.net.co · novam.net.co
       </p>
     </div>
   `;
@@ -125,7 +125,7 @@ export async function POST(req: NextRequest) {
     await Promise.all([
       /* Notificación interna */
       resend.emails.send({
-        from: "Nova Measurement <noreply@novam.com.co>",
+        from: "Nova Measurement <noreply@novam.net.co>",
         to: [emailTo],
         replyTo: d.email,
         subject: `[Cotización] ${d.company} — ${d.application}`,
@@ -133,7 +133,7 @@ export async function POST(req: NextRequest) {
       }),
       /* Confirmación al cliente */
       resend.emails.send({
-        from: "Nova Measurement <noreply@novam.com.co>",
+        from: "Nova Measurement <noreply@novam.net.co>",
         to: [d.email],
         subject: "Solicitud recibida — Nova Measurement",
         html: confirmHtml,

@@ -44,13 +44,13 @@ const APPLICATIONS = [
 /* Ingenieros por zona — coherente con /nosotros */
 const ZONE_CONTACTS = [
   {
-    zone: "Gerencia General",
+    zone: "Gerencia General · Zona Norte",
     city: "Barranquilla",
     name: "Antonio Sancivier",
     phone: "+57 321 535 4908",
     phoneHref: "tel:+573215354908",
     whatsapp: "https://wa.me/573215354908",
-    email: "asancivier@novam.com.co",
+    email: "asancivier@novam.net.co",
   },
   {
     zone: "Zona Centro · Llanos",
@@ -59,7 +59,7 @@ const ZONE_CONTACTS = [
     phone: "+57 311 870 7943",
     phoneHref: "tel:+573118707943",
     whatsapp: "https://wa.me/573118707943",
-    email: "cmedina@novam.com.co",
+    email: "cmedina@novam.net.co",
   },
   {
     zone: "Zona Santanderes",
@@ -68,16 +68,7 @@ const ZONE_CONTACTS = [
     phone: "+57 316 749 8585",
     phoneHref: "tel:+573167498585",
     whatsapp: "https://wa.me/573167498585",
-    email: "bdelgado@novam.com.co",
-  },
-  {
-    zone: "Zona Norte",
-    city: "Barranquilla",
-    name: "Nikol Carrillo",
-    phone: "+57 300 616 6214",
-    phoneHref: "tel:+573006166214",
-    whatsapp: "https://wa.me/573006166214",
-    email: "ncarrillo@novam.com.co",
+    email: "bdelgado@novam.net.co",
   },
   {
     zone: "Zona Occidente",
@@ -86,7 +77,7 @@ const ZONE_CONTACTS = [
     phone: "+57 310 879 0678",
     phoneHref: "tel:+573108790678",
     whatsapp: "https://wa.me/573108790678",
-    email: "cgonzalez@novam.com.co",
+    email: "cgonzalez@novam.net.co",
   },
 ];
 

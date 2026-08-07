@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
   }
 
   const d = parsed.data;
-  const notifyTo = process.env.CONTACT_EMAIL_TO ?? "info@novam.com.co";
+  const notifyTo = process.env.CONTACT_EMAIL_TO ?? "info@novam.net.co";
 
   const guideHtml = `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -33,7 +33,7 @@ export async function POST(req: NextRequest) {
           <strong>"Medición Clamp-On vs. Tradicional: Guía de Selección 2026"</strong>.
         </p>
         <div style="text-align: center; margin: 24px 0;">
-          <a href="${process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.novam.com.co"}/downloads/guia-medicion-clamp-on.pdf"
+          <a href="${process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.novam.net.co"}/downloads/guia-medicion-clamp-on.pdf"
              style="background: #0056B3; color: white; padding: 14px 28px; text-decoration: none; border-radius: 6px; font-weight: 700; font-size: 15px;">
             Descargar Guía →
           </a>
@@ -41,7 +41,7 @@ export async function POST(req: NextRequest) {
         <p style="color: #5C6B7A; font-size: 14px; border-top: 1px solid #E0E5EC; padding-top: 16px;">
           ¿Tiene un reto de medición específico? Con gusto le asesoramos sin costo.
           <br/><a href="https://wa.me/573215354908" style="color: #0056B3;">+57 321 535 4908</a> ·
-          <a href="mailto:info@novam.com.co" style="color: #0056B3;">info@novam.com.co</a>
+          <a href="mailto:info@novam.net.co" style="color: #0056B3;">info@novam.net.co</a>
         </p>
       </div>
     </div>
@@ -50,13 +50,13 @@ export async function POST(req: NextRequest) {
   try {
     await Promise.all([
       resend.emails.send({
-        from: "Nova Measurement <noreply@novam.com.co>",
+        from: "Nova Measurement <noreply@novam.net.co>",
         to: [d.email],
         subject: "Su guía técnica: Medición Clamp-On 2026 — Nova Measurement",
         html: guideHtml,
       }),
       resend.emails.send({
-        from: "Nova Measurement <noreply@novam.com.co>",
+        from: "Nova Measurement <noreply@novam.net.co>",
         to: [notifyTo],
         subject: `[Lead] ${d.company} descargó la guía técnica`,
         html: `<p><b>Nombre:</b> ${d.name}<br/><b>Empresa:</b> ${d.company}<br/><b>Cargo:</b> ${d.role}<br/><b>Email:</b> ${d.email}</p>`,

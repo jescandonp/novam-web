@@ -68,11 +68,11 @@ export default async function CaseStudyPage({
     headline: cs.title,
     description: cs.summary,
     author: { "@type": "Organization", name: "Nova Measurement SAS" },
-    publisher: { "@type": "Organization", name: "Nova Measurement SAS", url: "https://www.novam.com.co" },
+    publisher: { "@type": "Organization", name: "Nova Measurement SAS", url: "https://www.novam.net.co" },
     about: { "@type": "Product", name: tech?.name ?? cs.technology },
     locationCreated: { "@type": "Place", addressCountry: "CO", name: cs.location },
     datePublished: `${cs.year}-01-01`,
-    image: `https://www.novam.com.co${cs.image}`,
+    image: `https://www.novam.net.co${cs.image}`,
   };
 
   return (

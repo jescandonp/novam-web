@@ -16,12 +16,12 @@ export function Breadcrumb({ items, light = false }: BreadcrumbProps) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.novam.com.co" },
+      { "@type": "ListItem", position: 1, name: "Inicio", item: "https://www.novam.net.co" },
       ...items.map((item, i) => ({
         "@type": "ListItem",
         position: i + 2,
         name: item.label,
-        ...(item.href ? { item: `https://www.novam.com.co${item.href}` } : {}),
+        ...(item.href ? { item: `https://www.novam.net.co${item.href}` } : {}),
       })),
     ],
   };

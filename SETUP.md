@@ -16,8 +16,8 @@ NEXT_PUBLIC_SANITY_PROJECT_ID=   ← desde sanity.io/manage
 NEXT_PUBLIC_SANITY_DATASET=production
 SANITY_API_TOKEN=                ← Token con write permissions
 RESEND_API_KEY=                  ← desde resend.com
-CONTACT_EMAIL_TO=info@novam.com.co
-NEXT_PUBLIC_SITE_URL=https://www.novam.com.co
+CONTACT_EMAIL_TO=info@novam.net.co
+NEXT_PUBLIC_SITE_URL=https://www.novam.net.co
 ```
 
 ## 3. Crear proyecto en Sanity
@@ -110,16 +110,16 @@ vercel env add CONTACT_EMAIL_TO
 
 ## 7. Configurar Cloudflare DNS
 
-1. Agregar sitio `novam.com.co` en Cloudflare
+1. Agregar sitio `novam.net.co` en Cloudflare
 2. Cambiar nameservers en el registrador
 3. Apuntar CNAME/A a Vercel según instrucciones de Vercel
 
 ## 8. Verificar en Google Search Console
 
 1. Ir a search.google.com/search-console
-2. Agregar propiedad `https://www.novam.com.co`
+2. Agregar propiedad `https://www.novam.net.co`
 3. Verificar via archivo HTML o meta tag (Vercel lo facilita)
-4. Enviar sitemap: `https://www.novam.com.co/sitemap.xml`
+4. Enviar sitemap: `https://www.novam.net.co/sitemap.xml`
 
 ---
 

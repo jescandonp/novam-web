@@ -4,7 +4,7 @@ import { technologies } from "@/data/technologies";
 import { industries } from "@/data/industries";
 import { blogPosts } from "@/data/blogPosts";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.novam.com.co";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.novam.net.co";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
