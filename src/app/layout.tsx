@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     template: "%s | Nova Measurement",
   },
   description:
-    "Distribuidor autorizado Flexim y partner exclusivo Smar en Colombia. Caudalímetros clamp-on para Oil & Gas, energía y procesos industriales. Soporte técnico en Bogotá, Barranquilla y Bucaramanga.",
+    "Distribuidor autorizado Flexim y partner exclusivo Smar en Colombia. Caudalímetros clamp-on para Oil & Gas, energía y procesos industriales. Soporte técnico en Bogotá, Barranquilla, Bucaramanga y Cali.",
   keywords: [
     "medición no intrusiva",
     "caudalímetro clamp-on",

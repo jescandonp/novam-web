@@ -129,8 +129,7 @@ Consolidarse como el referente técnico indiscutible en Colombia para la optimiz
 | Ciudad | Zona | Responsable | Teléfono | Correo |
 |---|---|---|---|---|
 | Barranquilla | Gerencia General · Zona Norte | Antonio Sancivier | +57 321 535 4908 | asancivier@novam.net.co |
-| Bogotá | Zona Centro · Llanos | Cristian Medina | +57 311 870 7943 | cmedina@novam.net.co |
-| Bucaramanga | Zona Santander | Brandon Delgado | +57 316 749 8585 | bdelgado@novam.net.co |
+| Bogotá / Bucaramanga | Zona Centro · Llanos · Santanderes | Cristian Medina | +57 311 870 7943 | cmedina@novam.net.co |
 | Cali | Zona Pacífico · Sur | Carolina González | +57 310 879 0678 | cgonzalez@novam.net.co |
 
 ---
