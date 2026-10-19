@@ -60,6 +60,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${BASE_URL}/politica-de-privacidad`,
+      lastModified: now,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
       url: `${BASE_URL}/recursos/calculadora-roi`,
       lastModified: now,
       changeFrequency: "monthly",
